@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2>Account Details</h2>
+    <div class="card mt-4">
+        <div class="card-header">
+            Account ID: {{ account.id }}
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Name: {{ account.name }}</h5>
+            <p class="card-text">Balance: {{ account.balance }}</p>
+            <a href="{% url 'list_accounts' %}" class="btn btn-primary">Back to Accounts</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

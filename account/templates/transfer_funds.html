@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+<div class="container mt-4">
+    <h2>Transfer Funds</h2>
+    <form method="post" class="mt-4">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit" class="btn btn-primary">Transfer</button>
+    </form>
+
+    {% if form.errors %}
+        <div class="alert alert-danger mt-4">
+            <ul>
+                {% for field, errors in form.errors.items %}
+                    <li>{{ field }}: {{ errors }}</li>
+                {% endfor %}
+            </ul> 
+        </div>
+    {% endif %}
+</div>
+
+{% endblock %}
